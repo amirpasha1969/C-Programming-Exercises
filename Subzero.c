@@ -1,17 +1,26 @@
 #include<stdio.h>
+#include<stdbool.h>
+bool searching(int *numbers , int n);
 int main()
 {
-    int number , number2;
+    int number;
     scanf("%d" , &number);
-    for(int j=0;j<number;j++)
-    {
-    scanf("%d" , &number2);
-    int a[number2];
+    int numbers[number];
     for(int i=0;i<number;i++)
-    {
-        scanf("%d" , &a[i]);
-    }
-    }
-    if(number==1) printf("true");
-    if(number==2) printf("false\ntrue");
+        {
+            scanf("%d" , &numbers[i]);
+        }
+    if(searching(numbers)) printf("True");
+    else printf("False");
+}
+bool searching(int *numbers , int n)
+{
+    for(int i=0;i<n;i++)
+        {
+            for(int j=i+1;j<n;j++)
+                {
+                    if(numbers[i]+numbers[j]==0) return true;
+                }
+        }
+    return false;
 }
