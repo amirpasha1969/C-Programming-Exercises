@@ -10,7 +10,7 @@ int main()
         {
             scanf("%d" , &numbers[i]);
         }
-    if(searching(numbers)) printf("True");
+    if(searching(numbers , number)) printf("True");
     else printf("False");
 }
 bool searching(int *numbers , int n)
